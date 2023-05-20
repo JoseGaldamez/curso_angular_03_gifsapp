@@ -1,0 +1,22 @@
+<!-- component reemplazed by shared-lazy-image -->
+
+<div *ngIf="gif; else elseGif">
+  <div class="card mb-2 text-center bg-dark">
+
+    <!-- <img [src]="gif.images.downsized_medium.url " class="card-img-top" [alt]="gif.title" /> -->
+
+    <shared-lazy-image [src]="gif.images.downsized_medium.url" [alt]="gif.title"></shared-lazy-image>
+
+    <div *ngIf=" gif.title" class="card-body text-white">
+      <p class="card-text text-center">
+        {{ gif.title || 'No title' }}
+      </p>
+    </div>
+  </div>
+</div>
+
+<ng-template #elseGif>
+  <div>
+    git not found
+  </div>
+</ng-template>
